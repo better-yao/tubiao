@@ -40,9 +40,10 @@
                 mark : {show: false},//辅助线开关
                 dataView : {show: false, readOnly: false},//数据视图工具，可以展示当前图标所用的数据，现在为不只读状态
                 restore : {title:"还原",show: true},//还原设置
-                saveAsImage : {title:"保存图片",show: true}//保存图片
+                saveAsImage : {title:"保存图片",show: true},//保存图片
+                dataZoom : {show: true}
             },
-            right : 100
+            right : 145
         },
         dataZoom: {//最下面滑动的区域缩放滑块  数据滑块
             show: true,
@@ -80,6 +81,7 @@
                     normal: {
                         color: '#98d58c', //改变折线点的颜色
                         lineStyle: {
+                            width: 2,//线条宽度
                             color: '#98d58c' //改变折线颜色
                         }
                     }
@@ -96,9 +98,10 @@
                 },
                 itemStyle: {
                     normal: {
-                        color: '#48bad5', //改变折线点的颜色
+                        color: '#5cded9', //改变折线点的颜色
                         lineStyle: {
-                            color: '#48bad5' //改变折线颜色
+                            width: 2,//线条宽度
+                            color: '#5cded9' //改变折线颜色
                         }
                     }
                 },
@@ -116,6 +119,7 @@
                     normal: {
                         color: '#ab32d5', //改变折线点的颜色
                         lineStyle: {
+                            width: 2,//线条宽度
                             color: '#ab32d5' //改变折线颜色
                         }
                     }
@@ -124,16 +128,17 @@
             },
             {
                 name: 'Line # 4',//名称
-                type: 'line',//散点图
+                type: 'scatter',//散点图
                 showAllSymbol: false,//显示所有图形--标记图形
                 showSymbol : false,
                 symbolSize: function (value){//折线中或散点中的标记的大小，value是data中数据的值
-                    return 2;
+                    return 4;
                 },
                 itemStyle: {
                     normal: {
                         color: '#938baa', //改变折线点的颜色
                         lineStyle: {
+                            width: 4,//线条宽度
                             color: '#938baa' //改变折线颜色
                         }
                     }
@@ -142,17 +147,18 @@
             },
             {
                 name: 'Line # 5',//名称
-                type: 'line',//散点图
+                type: 'scatter',//散点图
                 showAllSymbol: false,//显示所有图形--标记图形
                 showSymbol : false,
                 symbolSize: function (value){//折线中或散点中的标记的大小，value是data中数据的值
-                    return 2;
+                    return 4;
                 },
                 itemStyle: {
                     normal: {
                         color: '#d51a22', //改变折线点的颜色
                         lineStyle: {
-                            color: '#d51a22' //改变折线颜色
+                            color: '#d51a22',//改变折线颜色
+                            width: 4//线条宽度
                         }
                     }
                 },
@@ -160,17 +166,18 @@
             },
             {
                 name: 'Line # 6',//名称
-                type: 'line',//散点图
+                type: 'scatter',//散点图
                 showAllSymbol: false,//显示所有图形--标记图形
                 showSymbol : false,
                 symbolSize: function (value){//折线中或散点中的标记的大小，value是data中数据的值
-                    return 2;
+                    return 4;
                 },
                 itemStyle: {
                     normal: {
-                        color: '#d57f14', //改变折线点的颜色
+                        color: '#ed953f', //改变折线点的颜色
                         lineStyle: {
-                            color: '#d57f14' //改变折线颜色
+                            color: '#ed953f', //改变折线颜色
+                            width: 4//线条宽度
                         }
                     }
                 },
@@ -178,16 +185,20 @@
             },{
                 name: 'Line # 7',//名称
                 type: 'line',//散点图
+                smooth:false,//关键点为true就不支持实线，false支持虚线
                 showAllSymbol: false,//显示所有图形--标记图形
                 showSymbol : false,
                 symbolSize: function (value){//折线中或散点中的标记的大小，value是data中数据的值
                     return 2;
                 },
-                itemStyle: {
+                itemStyle: {//设置图形默认的样式以及强调的样式
                     normal: {
                         color: '#fff557', //改变折线点的颜色
-                        lineStyle: {
-                            color: '#fff557' //改变折线颜色
+                        lineStyle: {//折线的样式
+                            width: 3,//线宽
+                            color: '#fff557', //改变折线颜色
+                            type:'dotted'//'dotted'虚线 'solid'实线
+
                         }
                     }
                 },
@@ -205,7 +216,9 @@
                     normal: {
                         color: '#f88ca5', //改变折线点的颜色
                         lineStyle: {
-                            color: '#f88ca5' //改变折线颜色
+                            width: 3,//线宽
+                            color: '#f88ca5', //改变折线颜色
+                            type:'dotted'
                         }
                     }
                 },
@@ -221,9 +234,11 @@
                 },
                 itemStyle: {
                     normal: {
-                        color: '#2eff10', //改变折线点的颜色
+                        color: '#348cff', //改变折线点的颜色
                         lineStyle: {
-                            color: '#2eff10' //改变折线颜色
+                            width: 3,//线宽
+                            color: '#348cff',//改变折线颜色
+                            type:'dotted'
                         }
                     }
                 },
