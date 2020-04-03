@@ -41,7 +41,7 @@
                 dataView : {show: false, readOnly: false},//数据视图工具，可以展示当前图标所用的数据，现在为不只读状态
                 restore : {title:"还原",show: true},//还原设置
                 saveAsImage : {title:"保存图片",show: true},//保存图片
-                dataZoom : {show: true}
+                dataZoom : {show: false}
             },
             right : 145
         },
@@ -256,7 +256,7 @@
             console.log(response);
             if(response){
                 var now = new Date();
-                $(response.line1).each(function (index, value) {
+                $(response.line1).each(function (index, value) {//循环遍历
                     d1.push([
                         new Date(value.dateTime.yy,value.dateTime.mm-1, value.dateTime.dd, value.dateTime.shi, value.dateTime.fen,value.dateTime.miao),
                         value.location

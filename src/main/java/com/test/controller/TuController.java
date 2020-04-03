@@ -2,10 +2,13 @@ package com.test.controller;
 
 import com.test.bean.DateTime;
 import com.test.bean.Tu;
+import com.test.bean.Tu2;
+import com.test.service.TuService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.annotation.Resource;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,6 +22,7 @@ public class TuController {
     @RequestMapping("zhexian")
     @ResponseBody
     public Map<String, List> showInfo(){
+        System.out.println("测试1");
         List<String> list =new ArrayList<>();
         list.add(this.getClass().getClassLoader().getResource("prop/Line-1.txt").getPath());
         list.add(this.getClass().getClassLoader().getResource("prop/Line-2.txt").getPath());
@@ -66,7 +70,14 @@ public class TuController {
         }
         return null;
     }
+    @Resource
+    public TuService tuService;
 
+    @RequestMapping("zhexian2")
+    @ResponseBody
+    public Map<String, List> showTu2(String start, String end){
 
+        return tuService.showTu(start, end);
+    }
 
 }

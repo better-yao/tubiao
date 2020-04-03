@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.test.mapper.TuMapper" >
+    <resultMap id="BaseResultMap" type="com.test.bean.wgpacurrentspeed" >
+        <id column="Datetime" property="date" jdbcType="VARCHAR" />
+        <result column="average" property="average" jdbcType="VARCHAR" />
+    </resultMap>
+    <resultMap id="BaseResultMap2" type="com.test.bean.inclinometer1" >
+        <id column="Datetime" property="date" jdbcType="VARCHAR" />
+        <result column="hforce1" property="hforce1" jdbcType="VARCHAR" />
+        <result column="vforce1" property="vforce1" jdbcType="VARCHAR" />
+        <result column="hforce2" property="hforce2" jdbcType="VARCHAR" />
+        <result column="vforce2" property="vforce2" jdbcType="VARCHAR" />
+    </resultMap>
+    <resultMap id="BaseResultMap3" type="com.test.bean.inclinometer" >
+        <id column="Datetime" property="date" jdbcType="VARCHAR" />
+        <result column="hForce1" property="hForce1" jdbcType="VARCHAR" />
+        <result column="vForce1" property="vForce1" jdbcType="VARCHAR" />
+        <result column="hForce2" property="hForce2" jdbcType="VARCHAR" />
+        <result column="vForce2" property="vForce2" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="showTu2" parameterType="java.lang.String" resultMap="BaseResultMap">
+        SELECT Datetime,average FROM wgpacurrentspeed WHERE Datetime &gt;= #{start} AND Datetime &lt; #{end} ORDER BY Datetime ASC ;
+    </select>
+
+    <select id="showTu3" parameterType="java.lang.String" resultMap="BaseResultMap2">
+        SELECT Datetime,hforce1,vforce1,hforce2,vforce2 FROM inclinometer1 WHERE Datetime &gt;= #{start} AND Datetime &lt; #{end} ORDER BY Datetime ASC ;
+    </select>
+
+    <select id="showTu4" parameterType="java.lang.String" resultMap="BaseResultMap3">
+        SELECT Datetime,hForce1 ,vForce1 ,hForce2 ,vForce2 FROM inclinometer WHERE Datetime &gt;= #{start} AND Datetime &lt; #{end} ORDER BY Datetime ASC ;
+    </select>
+
+</mapper>
