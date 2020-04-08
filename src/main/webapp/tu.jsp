@@ -268,7 +268,7 @@
     $.ajax({
         type:'post',
         url:'${pageContext.request.contextPath}/tu/zhexian2',
-        data:{start:"2016-04-16 00:00:00",end:"2016-04-16 24:00:00"},
+        data:{start:"2016-01-01 00:00:00",end:"2016-01-01 24:00:00"},
         async:false,
         dataType:'json',
         success:function(response) {

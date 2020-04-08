@@ -32,4 +32,5 @@
         SELECT Datetime,hForce1 ,vForce1 ,hForce2 ,vForce2 FROM inclinometer WHERE Datetime &gt;= #{start} AND Datetime &lt; #{end} ORDER BY Datetime ASC ;
     </select>
 
+
 </mapper>
